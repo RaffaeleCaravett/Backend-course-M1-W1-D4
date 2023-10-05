@@ -1,17 +1,18 @@
+import ExerciseN1.Dipendente.Dipendente;
+import ExerciseN1.Enum.Dipartimento;
+import ExerciseN1.Enum.Livello;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Invio with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Maiusc+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Dipendente Jonny = new Dipendente(1500,378569493545L,1500,20, new Livello[]{Livello.IMPIEGATO},
+            new Dipartimento[]{Dipartimento.PRODUZIONE});
 
-            // Press Maiusc+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        Jonny.stampaDatiDipendente();
+        Jonny.promuovi();
+        System.out.println("Lo stipendio di Jonny è : " + Jonny.calcolaPaga());
+        System.out.println("Lo stipendio di Jonny comprensivo di ore di straordinario è :" + Jonny.calcolaPaga1(2));
     }
 }
