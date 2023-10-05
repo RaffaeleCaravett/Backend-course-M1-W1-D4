@@ -9,11 +9,11 @@ public class Dipendente {
 
     //Attributes
     private static double stipendioBase;
-    private static long matricola;
-    private static double stipendio;
-    private static double importoOrarioStraordinario;
-    private static Livello[] livello;
-    private static Dipartimento[] dipartimento;
+    private  long matricola;
+    private  double stipendio;
+    private  double importoOrarioStraordinario;
+    private  Livello[] livello;
+    private  Dipartimento[] dipartimento;
 
 
 
@@ -35,35 +35,35 @@ public class Dipendente {
     }
 
     //Getters and Setters
-    static double getStipendioBase(){
+    static public double getStipendioBase(){
         return stipendioBase;
     }
 
-    static long getMatricola(){
+     public long getMatricola(){
         return matricola;
     }
 
-    static double getStipendio(){
+     public double getStipendio(){
         return stipendio;
     }
 
-    static double getImportoOrarioStraordinario(){
+     public double getImportoOrarioStraordinario(){
         return importoOrarioStraordinario;
     }
 
-    static Livello[] getLivello(){
-        return livello;
+     public Livello getLivello(){
+        return livello[0];
     }
 
-    static  Dipartimento[] getDipartimento(){
+     public  Dipartimento[] getDipartimento(){
         return dipartimento;
     }
 
-    static Dipartimento[] setDipartimento (Dipartimento[] Dipartimento){
+     public Dipartimento[] setDipartimento (Dipartimento[] Dipartimento){
         return dipartimento = Dipartimento;
     }
 
-    static double setImportoOrarioStraordinario (double importoOrarioS){
+     double setImportoOrarioStraordinario (double importoOrarioS){
         return importoOrarioStraordinario=importoOrarioS;
     }
 
@@ -108,9 +108,9 @@ public class Dipendente {
             " ed il tuo stipendio è passato da " + stipendioBaseCopy + "euro, a " + stipendio
             +" euro");
     }
-    public static double calcolaPaga(){
+    public  double calcolaPaga(){
         switch (livello[0]){
-            case OPERAIO:
+            case OPERAIO:livello[0]= IMPIEGATO;
                 stipendio =isPromuoviCalled==true?stipendio:stipendioBase*1.2;
                 break;
             case IMPIEGATO : livello[0]=Livello.QUADRO;
@@ -125,7 +125,7 @@ public class Dipendente {
         return stipendio;
     }
 
-    public static double calcolaPaga1(double oreDiStraordinario){
+    public  double calcolaPaga1(double oreDiStraordinario){
         return stipendio + (oreDiStraordinario*importoOrarioStraordinario);
     }
 
